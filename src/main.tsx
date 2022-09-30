@@ -1,20 +1,11 @@
-import m from 'mithril'
-import './style.css'
+import m from 'mithril';
+import { ApiExamplePage } from './pages/ApiExamplePage';
+import { FormExamplePage } from './pages/FormExamplePage';
+import { HomePage } from './pages/HomePage';
+import './style.css';
 
-class Hello {
-    count = 0
-
-    view() {
-        return (
-            <div>
-                <h1>Hello!</h1>
-                <button onclick={() => this.count++}>
-                    Increment the counter
-                </button>
-                <p>Count = {this.count}</p>
-            </div>
-        )
-    }
-}
-
-m.mount(document.body, new Hello())
+m.route(document.body, '/', {
+    '/': HomePage,
+    '/api-example': ApiExamplePage,
+    '/form-example': FormExamplePage,
+});
