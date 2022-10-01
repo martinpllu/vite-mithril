@@ -1,11 +1,11 @@
 import m from 'mithril';
+import { Page } from '../components/Page';
 
 export class HomePage {
     view() {
         return (
-            <div>
-                <h1>Example app</h1>
-                <ul>
+            <Page title="Example app">
+                <ul class="list-disc p-4 space-y-4">
                     <li>
                         <a href="#!/api-example">API example page</a>
                     </li>
@@ -13,7 +13,7 @@ export class HomePage {
                         <a href="#!/form-example">Form example page</a>
                     </li>
                 </ul>
-            </div>
+            </Page>
         );
     }
 }
